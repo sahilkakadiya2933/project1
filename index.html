@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine Day Special</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: rgb(56, 156, 213);
+      color: black;
+      font-family: 'Protest Revolution', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    p {
+      font-size: 10vh;
+      text-align: center;
+      animation: sahil 1s infinite ease-in-out;
+      margin: 20px 0;
+    }
+
+    .image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .image-container div {
+      display: inline-block;
+      padding: 1%;
+      margin: 10px;
+    }
+
+    img {
+      height: 40vh;
+      max-width: 100%;
+      transition: opacity 0.5s ease; /* Smooth transition for images */
+    }
+
+    #yes, #no {
+      opacity: 0; /* Initially hidden */
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin: 20px 0;
+    }
+
+    button {
+      height: 7vh;
+      width: 15vh;
+      color: white;
+      background-color: black;
+      border: 4px solid white;
+      border-radius: 10px;
+      font-size: 2.5vh;
+      cursor: pointer;
+      transition: background-color 0.3s ease, height 0.3s ease, width 0.3s ease; /* Smooth button hover effect */
+    }
+
+    button:hover {
+      background-color: blue;
+      height: 8vh;
+      width: 16vh;
+    }
+
+    p:hover {
+      color: rgb(0, 255, 8);
+    }
+
+    @keyframes sahil {
+      to {
+        transform: translateX(30px);
+      }
+    }
+
+    @media (max-width: 768px) {
+      p {
+        font-size: 8vh;
+      }
+
+      img {
+        height: 30vh;
+      }
+
+      button {
+        height: 6vh;
+        width: 14vh;
+        font-size: 2vh;
+      }
+    }
+
+    @media (max-width: 480px) {
+      p {
+        font-size: 6vh;
+      }
+
+      img {
+        height: 20vh;
+      }
+
+      button {
+        height: 5vh;
+        width: 12vh;
+        font-size: 1.5vh;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <p id="propose">WILL YOU BE MY VALENTINE ??</p>
+
+  <div class="image-container">
+    <div><img id="yes" src="yes.gif" alt="Yes"></div>
+    <div><img id="normal" src="3.gif" alt="Normal"></div>
+    <div><img id="no" src="no.gif" alt="No"></div>
+  </div>
+
+  <div class="container">
+    <div>
+      <button id="first">Yes</button>
+    </div>
+    <div>
+      <button id="second">No</button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("first").addEventListener("mouseenter", function () {
+      document.getElementById("normal").style.opacity = "0";
+      document.getElementById("yes").style.opacity = "1";
+      document.getElementById("no").style.opacity = "0";
+    });
+
+    document.getElementById("first").addEventListener("mouseleave", function () {
+      document.getElementById("normal").style.opacity = "1";
+      document.getElementById("yes").style.opacity = "0";
+      document.getElementById("no").style.opacity = "0";
+    });
+
+    document.getElementById("second").addEventListener("mouseenter", function () {
+      document.getElementById("normal").style.opacity = "0";
+      document.getElementById("no").style.opacity = "1";
+      document.getElementById("yes").style.opacity = "0";
+    });
+
+    document.getElementById("second").addEventListener("mouseleave", function () {
+      document.getElementById("normal").style.opacity = "1";
+      document.getElementById("no").style.opacity = "0";
+      document.getElementById("yes").style.opacity = "0";
+    });
+  </script>
+</body>
+</html>
